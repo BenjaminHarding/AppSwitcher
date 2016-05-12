@@ -1,0 +1,224 @@
+// Useful classes
+//
+// Commonly used classes that can be used across the app.
+//
+// Styleguide useful
+
+
+// Genaral
+//
+// .float-left- Override default display behaviour, and sit the element as far to the left as possible
+// .center - horizontally align an element centrally
+// .float-right - Override default display behaviour, and sit the element as far to the right as possible
+// .break - Words that doesn't fit on the line will brake to new line
+// .nowrap - Words that doesn't fit will cut with three ending dots.
+// .full-width - Width 100%
+// .clearfix - Put on a parent element if children are floating elements.
+// .relative  - Position relative to the parent element
+// .clickable  - Cursor pointer
+// .noselect  - Prevent user from selecting text
+//
+// Styleguide useful.general
+
+.float-left{
+  float: left;
+}
+.center{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.float-right{
+  float: right;
+}
+.break {
+  -ms-word-break: break-all;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+.nowrap{
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+// No styleguide reference
+@include screen-med { // overwrites .nowrap on screens smaller than med
+  .nowrap--normal-med{
+    white-space: normal;
+  }
+}
+// No styleguide reference
+@include screen-min { // overwrites .nowrap on screens smaller than min
+  .nowrap--normal-min{
+    white-space: normal;
+  }
+}
+
+.full-width{
+  width: 100%;
+}
+
+.full-width-mob {
+  @include screen-mob() {
+    width: 100%;
+  }
+}
+
+// clearfix
+clearfix,
+.clearfix {
+   @include clearfix();
+}
+
+// No styleguide reference
+.disabled, // Deprecated
+.is-disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.relative {
+  position: relative;
+}
+
+.clickable {
+  cursor: pointer;
+}
+.no-select{
+  @extend noselect;
+}
+
+
+// Values
+//
+// Commonly used values
+//
+// .line-height-24 - Gives a 24px line-height
+// .line-height-32 - Gives a 32px line-height
+//
+// Styleguide useful.values
+
+.line-height-32,
+.line-height-32-before:before,
+.line-height-32-after:after{
+  line-height: 32px;
+}
+
+.line-height-32--force{
+  line-height: 32px !important;
+}
+.line-height-24,
+.line-height-24-before:before,
+.line-height-24-after:after{
+  line-height: 24px;
+}
+
+.line-height-24--force{
+  line-height: 24px !important;
+}
+
+
+// Hide and show
+//
+// See chapter breakpoints
+//
+// .hide - hide item
+// .show - show item
+// .hide-max - hides on screens smaller than breakpoint max
+// .show-max - shows on screens bigger than breakpoint max
+// .hide-med - hides on screens smaller than breakpoint med
+// .show-med - shows on screens bigger than breakpoint med
+// .hide-min - hides on screens smaller than breakpoint min
+// .show-min - shows on screens bigger than breakpoint min
+// .hide-mob - hides on screens smaller than breakpoint mob
+// .show-mob - shows on screens bigger than breakpoint mob
+//
+// Styleguide useful.visibility
+
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+
+@media screen and (max-width:$screen-max) {
+  .hide-max {
+    display: none;
+  }
+
+  .show-max {
+    display: block;
+  }
+}
+
+@media screen and (max-width:$screen-med) {
+  .hide-med {
+    display: none;
+  }
+
+  .show-med {
+    display: block;
+  }
+}
+
+@media screen and (max-width:$screen-min) {
+  .hide-min {
+    display: none;
+  }
+
+  .show-min {
+    display: block;
+  }
+}
+
+@media screen and (max-width:$screen-mob) {
+  .hide-mob {
+    display: none!important;
+  }
+
+  .show-mob {
+    display: block;
+  }
+}
+
+
+@media screen and (max-width:$screen-med) {
+  .screen-med-hide {
+    display: none;
+  }
+
+  .screen-med-show,
+  .screen-med-show-block {
+    display: block;
+  }
+}
+
+@media screen and (max-width:$screen-min) {
+  .screen-min-hide {
+    display: none;
+  }
+
+  .screen-min-show {
+    display: block;
+  }
+}
+
+@media screen and (max-width:$screen-mob) {
+  .screen-mob-hide {
+    display: none;
+  }
+
+  .screen-mob-show {
+    display: block;
+  }
+}
+
+
+
+
+
+

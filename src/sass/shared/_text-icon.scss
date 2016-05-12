@@ -1,0 +1,226 @@
+// Text-icon - Basic
+//
+// Markup:
+// <div class="text-icon text-icon--16">
+//   <span class="text-icon__icon">
+//     <div class="custom-icon icon-16 solidstar-icon"></div>
+//   </span>
+//   <span class="text-icon__text">Text</span>
+// </div>
+//
+// Styleguide Shared.texticon
+
+.text-icon {
+  position: relative;
+  display: block;
+}
+
+
+// Text-icon - Center
+//
+// .text-icon--center - Center the text-icon if parent has text-align: center
+//
+// Markup:
+// <div class="text-center">
+//   <div class="text-icon text-icon--16 {{modifier_class}}">
+//     <span class="text-icon__icon">
+//       <span class="svg-icon icon-16 icon-linux"></span>
+//     </span>
+//     <span class="text-icon__text">Text</span>
+//   </div>
+// </div>
+//
+// Styleguide Shared.texticon
+
+.text-icon--center{
+  display: inline-block;
+  max-width: 100%;
+}
+
+// Text-icon - Sizes
+//
+// .16 - Change both the .text-icon--16 and the icon size icon-16
+// .24 - Change both the .text-icon--24 and the icon size icon-24
+// .32 - Change both the .text-icon--32 and the icon size icon-32
+// .40 - Change both the .text-icon--40 and the icon size icon-40
+//
+// Markup:
+// <div class="text-icon text-icon--{{modifier_class}}">
+//   <span class="text-icon__icon">
+//     <div class="custom-icon icon-{{modifier_class}} solidstar-icon"></div>
+//   </span>
+//   <span class="text-icon__text">Text</span>
+// </div>
+//
+// Styleguide Shared.texticon
+
+
+// Text-icon - 36px
+//
+// Userd only with product icons
+//
+// .text-icon--36 - Use with product icon
+//
+// Markup:
+// <div class="text-icon {{modifier_class}}">
+//   <span class="text-icon__icon">
+//     <div class="product-icon product-icon--crash-reporting"></div>
+//   </span>
+//   <span class="text-icon__text">Text</span>
+// </div>
+//
+// Styleguide Shared.texticon
+
+.text-icon--16 {
+  padding-left: 24px;
+  .text-icon__text {
+    line-height: 16px;
+  }
+  .text-icon__icon {
+    line-height: 16px;
+  }
+}
+.text-icon--24 {
+  padding-left: 40px;
+  min-height: 24px;
+  .text-icon__text {
+    line-height: 24px;
+  }
+  .text-icon__icon {
+    line-height: 24px;
+  }
+}
+
+.text-icon--32 {
+  padding-left: 48px;
+  .text-icon__text {
+    line-height: 32px;
+  }
+  .text-icon__icon {
+    line-height: 32px;
+  }
+}
+
+.text-icon--36 {
+  padding-left: 48px;
+  .text-icon__text {
+    line-height: 36px;
+  }
+  .text-icon__icon {
+    line-height: 36px;
+  }
+}
+
+.text-icon--40 {
+  padding-left: 48px;
+  min-height: 40px;
+
+  .text-icon__text {
+    line-height: 40px;
+  }
+  .text-icon__icon {
+    line-height: 40px;
+  }
+}
+
+.text-icon__icon,
+.text-icon__text{
+  display: block;
+}
+.text-icon__icon{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.text-icon__text{
+  text-align: left;
+  .text-icon--spaced & {
+  padding-left: 16px;
+  }
+}
+
+
+// Text-icon - After
+//
+// Use for open in new window icon
+//
+// Markup:
+// <div class="clearfix">
+//   <div class="text-icon-after">
+//     <div class="text-icon-after__text">
+//       <a href="#">/open/this/link/in/this/window</a>
+//     </div>
+//     <div class="text-icon-after__icon">
+//       <a href="#" target="_blank"> <!-- open in new window -->
+//         <span class="custom-icon icon-16 icon-new-window"></span>
+//       </a>
+//     </div>
+//   </div>
+// </div>
+//
+// Styleguide Shared.texticon
+
+// open in new window
+.text-icon-after {
+  @extend clearfix;
+  max-width: 100%;
+  float: left;
+  position: relative;
+  padding-right: 24px;
+}
+.text-icon-after__text {
+  display: block;
+  width: 100%;
+  line-height: 20px;
+}
+.text-icon-after__icon {
+  position: absolute;
+  right: 0;
+  top: 2px;
+}
+
+.text-icon-after__text--16 {
+  line-height: 16px;
+}
+
+.text-icon-after__icon--16 {
+  top: 0;
+}
+
+
+// Text-icon - Before
+//
+// Use for icon preceding text
+//
+// Markup:
+// <div class="clearfix">
+//   <div class="text-icon-before">
+//     <div class="text-icon-before__icon">
+//       <span class="custom-icon icon-16 hipchat-icon"></span>
+//     </div>
+//     <div class="text-icon-before__text">
+//       <p class="text-ellipsis">Your integration with <strong>HipChat</strong> has been disabled - We don't seem to be able to connect with <strong>HipChat</strong>. <a href="#">Fix now</a></p>
+//     </div>
+//   </div>
+// </div>
+//
+// Styleguide Shared.texticon
+
+// open in new window
+.text-icon-before {
+  @extend clearfix;
+  max-width: 100%;
+  float: left;
+  position: relative;
+  padding-left: 24px;
+}
+.text-icon-before__text {
+  display: block;
+  width: 100%;
+  line-height: 20px;
+}
+.text-icon-before__icon {
+  position: absolute;
+  left: 0;
+  top: 2px;
+}

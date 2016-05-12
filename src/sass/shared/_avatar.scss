@@ -1,0 +1,114 @@
+// Avatar
+//
+//
+// Use with the .avatar class. Note tat all avatars should have the .avatar--circle class
+// The child "the actual avatar" should have same size as the .avatar wrapper
+//
+// .avatar--circle - description
+//
+// Markup:
+// <div class="avatar avatar-24 {{modifier_class}}">
+//   <div class="svg-icon icon-24 icon--anonymous-user"></div>
+// </div>
+//
+// Styleguide icon.avatar
+
+.avatar {
+  overflow: hidden;
+  display: block;
+  border-radius: 3px;
+  img {
+    display: block;
+    width: auto\9;
+    height: auto;
+    max-width: 100%;
+  }
+}
+.avatar--circle {
+  border-radius: 50%;
+}
+
+
+// Avatar-16
+//
+// <div class="avatar avatar--circle avatar-16"><div class="svg-icon icon-16 icon--anonymous-user"></div></div>
+//
+// Styleguide icon.avatar.1
+
+.avatar-16 {
+  width: 16px;
+  height: 16px;
+}
+
+
+
+// Avatar-20
+//
+// <div class="avatar avatar--circle avatar-20"><div class="svg-icon icon-20 icon--anonymous-user"></div></div>
+//
+// Styleguide icon.avatar.2
+
+.avatar-20 {
+  width: 20px;
+  height: 20px;
+}
+
+
+// Avatar-24
+//
+// <div class="avatar avatar--circle avatar-24"><div class="svg-icon icon-24 icon--anonymous-user"></div></div>
+//
+// Styleguide icon.avatar.3
+
+.avatar-24 {
+  width: 24px;
+  height: 24px;
+}
+
+
+// Avatar-32
+//
+// <div class="avatar avatar--circle avatar-32"><div class="svg-icon icon-32 icon--anonymous-user"></div></div>
+//
+// Styleguide icon.avatar.4
+
+.avatar-32 {
+  width: 32px;
+  height: 32px;
+}
+
+
+// Avatar-40
+//
+// <div class="avatar avatar--circle avatar-40"><div class="svg-icon icon-40 icon--anonymous-user"></div></div>
+//
+// Styleguide icon.avatar.5
+
+.avatar-40 {
+  width: 40px;
+  height: 40px;
+}
+
+
+// Avatar-64
+//
+// <div class="avatar avatar--circle avatar-64"><div class="svg-icon icon-64 icon--anonymous-user"></div></div>
+//
+// Styleguide icon.avatar.6
+
+.avatar-64 {
+  width: 64px;
+  height: 64px;
+}
+
+
+// Avatar-128
+//
+// <div class="avatar avatar--circle avatar-128"><div class="svg-icon icon-128 icon--anonymous-user"></div></div>
+//
+// Styleguide icon.avatar.7
+
+.avatar-128 {
+  width: 128px;
+  height: 128px;
+}

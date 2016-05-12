@@ -1,0 +1,285 @@
+// Type
+//
+// Styleguide type
+
+// Open Sanas font refs
+@font-face {
+  font-family: 'Open-Sans'; 
+  src: url(../Content/fonts/open-sans/OpenSans-Regular.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Open-Sans';
+  src: url(../Content/fonts/open-sans/OpenSans-Semibold.ttf) format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+$font-family: "Open-Sans",arial,helvetica,serif;
+$font-family-mono: "Source Code Pro", consolas, courier, monaco, 'courier new';
+
+
+// Text sizing variables
+//
+// $fontsize-h1 - how and when to use ???
+// $fontsize-h2 - how and when to use ???
+// $fontsize-h3 - how and when to use ???
+// $fontsize-h4 - how and when to use ???
+// $fontsize-h5 - how and when to use ???
+// $fontsize-form - how and when to use ???
+// $fontsize-standard - how and when to use ???
+// $fontsize-button - how and when to use ???
+// $fontsize-small - how and when to use ???
+// $fontsize-code - how and when to use ???
+// $type-small - how and when to use ???
+// $type-base - how and when to use ???
+// $type-large - how and when to use ???
+//
+// Styleguide type.1
+
+$fontsize-h0: 3.2;
+$fontsize-h1: 2.4;
+$fontsize-h2: 2.0;
+$fontsize-h3: 1.8;
+$fontsize-h4: 1.6;
+$fontsize-h5: 1.4;
+
+$fontsize-form: 1.4;
+$fontsize-standard: 1.4;
+$fontsize-button: 1.4;
+$fontsize-small: 1.2;
+$fontsize-code: 1.3;
+
+$type-small: 1.4;
+$type-base: 1.4;
+$type-large: 1.6;
+
+// base styles
+html {
+  font-size: 62.5%;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  color: $text-1;
+  line-height: 1.2;
+  font-family: $font-family;
+  @include font-size($fontsize-standard);
+}
+
+em,
+.text-italic {
+  font-style:italic;
+}
+strong,
+.text-bold {
+  font-weight: bold;
+}
+
+a,
+.link-primary {
+  color: $color-azure;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  &:hover,
+  &:active {
+    color: $color-ember;
+  }
+}
+
+
+// Text colors
+//
+// .text-blue - $color-azure-dark
+// .text-purple - $color-byzantine-light
+// .text-red - $color-ember-dark
+// .text-orange - $color-flame-dark
+// .text-yellow - $color-lightning
+// .text-green - $color-forest-dark
+// .text-grey - $text-grey
+// .text-grey-light - $text-grey-light
+// .text-white - $white
+// .text-black - $black
+// .text-dark - $text-1
+// .text-light - $color-grey-light
+//
+// Markup:
+// <span class="{{modifier_class}}">Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span>
+//
+// Styleguide type.2
+
+.text-blue {color: $color-azure;}
+.text-purple {color: $color-byzantine;}
+.text-red {color: $color-ember-dark;}
+.text-orange {color: $color-flame-dark;}
+.text-yellow {color: $color-lightning;}
+.text-green {color: $color-forest;}
+.text-grey {color: $text-grey;}
+.text-grey-light {color: $text-grey-light;}
+.text-white {color: $white;}
+.text-black {color: $black;}
+.text-dark {color: $text-1;}
+.text-light {color: $text-grey-light;}
+
+
+// Handy text classes
+//
+// .text-normal - description
+// .text-underline - description
+// .text-break - description
+// .text-ellipsis - description
+// .text-mono  - description
+// .foot-note - description
+// .headline - description
+// .text-center - Center align text of block-level element (and child elements)
+// .text-right - Right align text of block-level element (and child elements)
+// .text-left - Left align text of block-level element (and child elements)
+// .text-italic - Italicise text
+// .text-highlight - Add semi-transparent background to text
+//
+// Markup:
+// <p class="{{modifier_class}}">Lorem ipsum dolor sit amet, consectetur adipisicing elit.<p>
+//
+// Styleguide type.3
+
+.text-normal {font-weight: normal;}
+.text-underline {text-decoration: underline;}
+
+break-word,
+.text-break {
+  -ms-word-break: break-all;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+
+ellipsis,
+.text-ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+}
+
+.text-mono {
+  font-family: $font-family-mono;
+  @include font-size($fontsize-code);
+}
+
+.foot-note {
+  @include font-size($fontsize-standard);
+  color: $color-grey;
+  max-width: 600px;
+  line-height: 1.2;
+}
+
+.headline {
+  @include font-size(1.6);
+  line-height: 1.4;
+
+  @include screen-mob {
+    @include font-size(1.4);
+  }
+}
+
+.text-center {text-align: center;}
+.text-right {text-align: right;}
+.text-left {text-align: left;}
+.text-italic {font-style: italic;}
+.text-highlight {background-color: rgba($color-lightning, 0.2)}
+
+
+
+// Heading sizing classes
+// .heading-size-0 - description
+// .heading-size-1 - description
+// .heading-size-2 - description
+// .heading-size-3 - description
+// .heading-size-4 - description
+// .heading-size-5 - description
+//
+// Markup:
+// <span class="{{modifier_class}}">Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span>
+//
+// Styleguide type.4
+
+// Headings
+h1, h2, h3, h4 {
+  display: block;
+}
+
+.heading-size-0 {
+  @include font-size($fontsize-h0);
+  font-weight: normal!important;
+  line-height: 48px!important;
+}
+
+h1,
+.heading-size-1 {
+  @include font-size($fontsize-h1);
+}
+.heading-size-1 {
+  font-weight: bold;
+}
+h2,
+.heading-size-2 {
+  @include font-size($fontsize-h2);
+}
+h3,
+.heading-size-3 {
+  @include font-size($fontsize-h3);
+  font-weight: bold;
+}
+h4,
+.heading-size-4 {
+  @include font-size($fontsize-h4);
+  font-weight: bold;
+}
+.heading-size-5 {
+  @include font-size($fontsize-h5);
+  font-weight: bold;
+}
+
+
+
+// Text sizing classes
+//
+// .text-size-large - description
+// .text-size-medium - description
+// .text-size-small - description
+//
+// Markup:
+// <span class="{{modifier_class}}">Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span>
+//
+// Styleguide type.5
+
+.text-size-large {
+  @include font-size(1.6);
+}
+.text-size-medium {
+  @include font-size(1.4);
+}
+.text-size-small {
+  @include font-size(1.2);
+}
+
+// form element type styling
+form,
+input,
+textarea,
+label,
+select {
+  font-family: $font-family;
+  @include font-size($fontsize-form);
+}
+
+// input placeholder colors
+::-webkit-input-placeholder,
+:-moz-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder {
+  color: $black;
+}

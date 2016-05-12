@@ -1,0 +1,137 @@
+// Colors
+// 
+// Text color variables
+//
+// $text-black - description
+// $text-white - description
+// $text-1 - description
+// $text-2 - description
+// $text-3 - description
+// $text-blue - description
+// $text-red - description
+// $text-green - description
+// $text-yellow - description
+// $text-purple - description
+// $text-grey - description
+// $text-grey-light - description
+//
+// Styleguide Shared.color
+
+$text-black: #333;
+$text-white: #fff;
+$text-1:#333;
+$text-2:#666;
+$text-3:#999;
+$text-blue:#4285f4;
+$text-red:#db4437;
+$text-green:#8bc34a;
+$text-yellow:#EFB11C;//#ffc539;//#a97b53;
+$text-purple:#8A4DC7;
+$text-grey: #808080;
+$text-grey-light: #bbb;
+
+
+// Other colors
+//
+// Markup: shared/kss-markup--colors.html
+//
+// Styleguide Shared.color
+
+// primary
+$white: #fff;
+$black: #000;
+
+// Primary Raygun Greys (use $color-grey-darkest // Jet DK instead of Black)
+$color-grey-darker: #bbb; // Jet MD
+$color-grey-dark: #cfcfcd; // Battleship
+$color-grey: #d8d8d8; //#b6b6b4; // Silver DK
+$color-grey-light: #ddd; // Silver MD // -- remove
+$color-grey-lighter: #f1f1f1;//#dcdbdb;
+$color-grey-lightest: #fafafa;//#dddddd; // Silver LT -- should be background-1
+
+// border colors
+$color-border-dark: #bbb;
+$color-border: #d3d3d3;//#ccc;
+$color-border-light: #e8e8e8;
+$color-border-transparent: rgba(0,0,0,0.2);
+
+// Primary Raygun Dark Blue
+$color-stealth-darkest: #262d3a ;
+$color-stealth-dark: #262d3a ;
+$color-stealth: #303847 ; // Primary
+$color-stealth-light: #5A606B ;
+
+// Unassigned
+$color-alpine-dark: #1499a6  ;
+$color-alpine: #1CB6C0  ;
+$color-alpine-light: #62ccd4  ;
+
+// General link color
+$color-azure-dark: #0369d2  ;
+$color-azure: #158FEF  ;
+$color-azure-light: #5eb2f4  ;
+$color-azure-highlight: #ecf4ff;
+
+// Real User Monitoring Purple
+$color-byzantine-dark: #511a8c;
+$color-byzantine: #8a4dc7;
+$color-byzantine-light: #855eae;
+$color-byzantine-highlight: rgba(#855eae,0.2);
+
+// Error Reporting & Error/Alert Red
+$color-ember-dark: #dc280a  ;
+$color-ember: #F73415  ;
+$color-ember-light: #fa5028  ;
+$color-ember-highlight: #FFE1DF;
+
+// Unassigned
+$color-flame-dark: #fa610b  ;
+$color-flame: #FB7A31  ;
+$color-flame-light: #fb8c4c  ;
+
+// Logo Yellow
+$color-lightning-dark: #f4e216;
+$color-lightning: #ffc539;//#a97b53;
+$color-lightning-light: #f4e216;
+$color-lightning-highlight: #fff5db;//#FFEBB7;//#fffae7;
+
+// Call to Action Green
+$color-forest-dark: #00ad09  ;
+$color-forest: #1CC526  ;
+$color-forest-light: #46d04e  ;
+$color-forest-highlight: rgba(#46d04e,0.2)  ;
+
+// Stacktrace line object
+$color-lime-dark: #609407  ;
+$color-azure-darker: #0256AD;
+
+// Used for RUM tags
+$color-gold: #FFD700;
+$color-opera-red: #CC0F16;
+$color-dns-green: #006600;
+$color-server-green: #00BB00;
+
+// ToDo: bar chart color: keep or replace? Used in bar-charts.
+$color-graph-blue: #3E88C7;
+
+
+
+// backgrounds
+$background-color: #f1f1f1;
+$background-color-dark: #e1e1e1;
+$background-overlay: rgba($color-stealth,0.8);
+
+
+
+// Shadow colors
+//
+// $box-shadow - description
+// $modal-shadow - description
+// $header-shadow - description
+// $dropdown-shadow - description
+//
+// Styleguide Shared.color
+$box-shadow: 0 2px 3px -1px rgba($color-stealth-dark,0.1);
+$modal-shadow: 0 0 40px 0 rgba($color-stealth-dark, 0.2);
+$header-shadow: 0 2px 1px rgba($color-stealth-dark,0.15);
+$dropdown-shadow: 0 2px 12px rgba($color-stealth-dark,0.2);

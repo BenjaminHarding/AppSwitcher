@@ -1,0 +1,47 @@
+// Center
+//
+// Used to center entire page content with different sizes.
+//
+// .center - Default max width 1120px.
+// .center-full - Expands it's content to full width.
+// .center--max - Max width 1400px
+// .center--1240 - Max width 1240px
+// .center--1120 - Max width  1120px
+// .center--960 - Max width 960px
+// .center--800 - Max width 800px
+// .center--640 - Max width 640px
+// .center--480 - Max width 480px
+//
+// Styleguide Shared.center
+
+
+.center  {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+// centering sizes
+.center-full {max-width: none;}
+.center-max,
+.center--max {max-width: 1400px;}
+
+// centering specific
+.center-1240,
+.center--1240 {max-width: 1300px;}
+.center-1120,
+.center--1120 {max-width: 1120px;}
+.center-960,
+.center--960 {max-width: 960px;}
+.center-800,
+.center--800 {max-width: 800px;}
+.center-640,
+.center--640 {max-width: 640px;}
+.center-480,
+.center--480 {max-width: 480px;}
+
+// Todo: Pull out... !what is this don't use please
+.block-center {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}

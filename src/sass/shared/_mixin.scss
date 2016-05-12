@@ -1,0 +1,310 @@
+// Mixins
+//
+// Mixins can be used anywhere with @include
+//
+// Styleguide mixin
+
+
+// transition($property)
+//
+// Adds browser prefixes with default values "all 200ms linear"
+//
+// Compatible in ???
+//
+// $property - Any rule to prefix
+//
+// Styleguide mixin.1
+
+@mixin transition($property:all 200ms linear) {
+  -webkit-transition: $property;
+  -moz-transition: $property;
+  -ms-transition: $property;
+  -o-transition: $property;
+  transition: $property;
+}
+
+// Todo: pull out. Don't use
+@mixin transform-transition($speed:200ms,$type:ease-in-out) {
+  -webkit-transition: -webkit-transform $speed $type;
+  -moz-transition: -moz-transform $speed $type;
+  -ms-transition: -ms-transform $speed $type;
+  -o-transition: -o-transform $speed $type;
+  transition: transform $speed $type;
+}
+
+
+// translate($translate)
+//
+// Adds browser prefixes. E.g -webkit-transform: scale(2);
+//
+// Compatible in: IE9+, 
+// http://caniuse.com/#feat=transforms2d
+//
+// $translate - The translate property that will be added to the transform rule.
+//
+// Styleguide mixin.2
+
+@mixin translate($translate) {
+  -webkit-transform: $translate;
+     -moz-transform: $translate;
+      -ms-transform: $translate;
+       -o-transform: $translate;
+          transform: $translate;
+}
+
+
+// transform()
+//
+// Adds browser prefixes to following properties
+//
+// transform:translateZ(0);
+// transform-style: preserve-3d;
+// transform: translate3d(0, 0, 0);
+// backface-visibility: hidden;
+//
+// Compatible in ??
+//
+// Styleguide mixin.3
+
+@mixin transform() {
+  -webkit-transform:translateZ(0);
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+
+  -moz-transform:translateZ(0);
+  -moz-transform-style: preserve-3d;
+  -moz-transform: translate3d(0, 0, 0);
+  -moz-backface-visibility: hidden;
+
+  -ms-transform:translateZ(0);
+  -ms-transform-style: preserve-3d;
+  -ms-transform: translate3d(0, 0, 0);
+  -ms-backface-visibility: hidden;
+
+  -o-transform:translateZ(0);
+  -o-transform-style: preserve-3d;
+  -o-transform: translate3d(0, 0, 0);
+  -o-backface-visibility: hidden;
+
+  transform:translateZ(0);
+  transform-style: preserve-3d;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+
+// clearfix()
+//
+// Stops the container to collapse caused of floating children.
+//
+// Compatible in ??
+//
+// Styleguide mixin.4
+
+/// Applies the micro clearfix hack popularized by Nicolas Gallagher. Include this mixin on a container if its children are all floated, to give the container a proper height.
+/// @link http://nicolasgallagher.com/micro-clearfix-hack/ Micro Clearfix Hack
+@mixin clearfix {
+  &::before,
+  &::after {
+    content: ' ';
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+// touch-scroll()
+//
+// Gives touch screens a momentum basted scroll.
+// When scrolling with finger the page will continue to scroll for a while.
+// The body has momentum scroll by default but this should be added to each element that has a overflow-y: scroll.
+//
+// Compatible in only webkit browsers and is not a standardized property.
+//
+// Styleguide mixin.5
+
+@mixin touch-scroll() {
+  -webkit-overflow-scrolling: touch;
+}
+
+
+// verticalGradient($start,$end)
+//
+// Makes a linear gradient.
+//
+// $start - start color + background colors for browsers that not supporting gradient.
+// $end - end color
+//
+// Compatible in ??
+//
+// Styleguide mixin.6
+
+@mixin verticalGradient($start,$end){
+    background-color: $start;
+    //@include filter-gradient($start, $end, vertical); // IE6-8
+    // IE9 SVG, needs conditional override of 'filter' to 'none'
+    //$experimental-support-for-svg: true;
+    -webkit-background-image: linear-gradient(to bottom, $start 0%, $end 100%);
+    -moz-background-image: linear-gradient(to bottom, $start 0%, $end 100%);
+    -ms-background-image: linear-gradient(to bottom, $start 0%, $end 100%);
+    -o-background-image: linear-gradient(to bottom, $start 0%, $end 100%);
+    background-image: linear-gradient(to bottom, $start 0%, $end 100%);
+    //@include background-image(linear-gradient(top, $start 0%,$end 100%)); // compass mixin
+}
+
+
+// scale($size:0.3)
+//
+// browser prefixes the scale property
+//
+// $size - default 0.3
+//
+// Compatible in ??
+//
+// Styleguide mixin.7
+
+@mixin scale($size:0.3) {
+  -webkit-transform:scale($size);
+     -moz-transform:scale($size);
+       -o-transform:scale($size);
+      -ms-transform:scale($size);
+          transform:scale($size);
+}
+
+
+@mixin noSelect() { // todo: pull out
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+
+// noselect()
+//
+// prevent the dragging feature when dragging text.
+//
+// Compatible in ??
+//
+// Styleguide mixin.8
+
+@mixin noselect() {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+
+// font-size($sizeValue: 1.6)
+//
+// Gives the font size px ard rem values
+//
+// Compatible in ??
+//
+// Styleguide mixin.9
+
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+
+
+// placeholder-color($color)
+//
+// Changing the color of the placeholder text for text-input fields. Browser prefixed.
+//
+// $color - The color of the text
+//
+// Compatible in ??
+//
+// Styleguide mixin.10
+
+@mixin placeholder-color($color) {
+  &::-webkit-input-placeholder {color: $color;}
+  &:-ms-input-placeholder {color: $color;}
+  &::-moz-placeholder {color: $color;}
+  &:-moz-placeholder {color: $color;}
+}
+
+
+// noWrap()
+//
+// Adds 3 dots after text when in collapses. Wont brake to more than one line.
+//
+// Compatible in ??
+//
+// Styleguide mixin.11
+
+@mixin noWrap() {
+  // width must be defined on the element for this to work
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+// extend this class (reduce generated css)
+noselect { // Todo: dont use and pull out.
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+// Calculate the responsive value for a single property/value pair
+// Tablet: 2/3 of desktop size
+// Mobile: 1/2 of desktop size
+
+@mixin responsive-value($property, $value) {
+  #{$property}: $value * 1px;
+
+  @media screen and (max-width:$screen-min) {
+    #{$property}: ( 2 / 3 ) * $value * 1px;
+  }
+
+  @media screen and (max-width:$screen-mob) {
+    #{$property}: ( 1 / 2 ) * $value *1px;
+  }
+}
+
+
+// @extend wordbreak
+//
+// Breaks a line to multiple lines if it doesn't fit in it's parent.
+//
+// Deprecated: make an @mixin for the same purpose.
+//
+// Compatible in ??
+//
+// Styleguide mixin.12
+
+wordbreak {
+-ms-word-break: break-all;
+     word-break: break-all;
+
+     // Non standard for webkit
+     word-break: break-word;
+
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+        hyphens: auto;
+}
+
+nowrap { // Todo: don't use and pull out
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+imgscale {  //todo: maybe pull out
+  display: block;
+  max-width: 100%;
+  height: auto;
+  width: auto\9;
+}
