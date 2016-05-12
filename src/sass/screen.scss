@@ -1,5 +1,6 @@
 // App Switcher Sass
-// Copied from Raygun
+
+@import '_reset';
 
 @import 'shared/_mixin';
 @import 'shared/_color';
@@ -14,3 +15,11 @@
 // buttons
 @import 'buttons/_button';
 @import 'buttons/_button-palette-new';
+
+// chrome
+@import 'chrome/_layout';
+@import 'chrome/_layout-header';
+@import 'chrome/_layout-footer';
+@import 'chrome/_layout-sidebar';
+@import 'chrome/_sidebar-list';
+@import 'chrome/_appswitcher';

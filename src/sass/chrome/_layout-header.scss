@@ -1,0 +1,358 @@
+// layout header
+.layout__header {
+  position: fixed;
+  z-index: 100;
+  height: $header-height;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: $color-azure;
+  @include screen-min {
+    position: absolute;
+  }
+}
+
+// states
+.layout__header--purple {
+  background: $color-byzantine;
+}
+.layout__header--blue {
+  background: $color-azure;
+}
+.layout__header--dark {
+  background: $color-stealth-light;
+}
+
+// header shadow
+.raygun-header--shadow {
+  @include mw-screen-min {
+    box-shadow: $header-shadow;
+  }
+}
+
+// -- header design
+
+//-- auth header
+.raygun-logo {
+  display: block;
+  text-indent: -9999px;
+  margin-left: 12px;
+  height: 48px;
+  width: 120px;
+  background-image: url('/Content/images/logo/raygun-logotype.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 120px 26px;
+
+  &:active {
+    transform: translate(0,1px);
+  }
+}
+
+html.svg {
+  .raygun-logo {
+    background-image: url('/Content/images/logo/raygun-logotype.svg');
+  }
+}
+
+
+//-- inapp stuff
+body.layout--sidebar {
+  .raygun-header {
+    padding-left: $sidebar-width;
+
+    @include screen-min {
+      padding-left: 0;
+    }
+  }
+}
+
+// -- app header
+.raygun-header {
+  position: relative;
+}
+
+.raygun-header__user {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 4px 8px;
+}
+
+.raygun-header__application {
+  position: absolute;
+  width: $sidebar-width;
+  left: 0;
+  top: 0;
+
+  @include screen-min {
+    background: none;
+  }
+}
+
+.raygun-header__breadcrumb {
+  position: absolute;
+  left: 240px;
+  top: 0;
+  padding: 4px 8px;
+}
+
+
+// raygun emblem
+.raygun-header__emblem {
+
+  overflow: hidden;
+  height: $header-height;
+  width: 100%;
+
+  @include screen-mob {
+    display: none;
+  }
+}
+
+
+.raygun-emblem {
+  @extend noselect;
+  cursor: pointer;
+  position: relative;
+  margin: 12px auto;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  &:active {
+    background-color: rgba(black,0.2);
+  }
+}
+
+.raygun-emblem__ring,
+.raygun-emblem__bolt,
+.raygun-emblem__shockwave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+}
+
+// emblem
+.raygun-emblem__ring {
+  border-radius: 50%;
+  border: 2px solid white;
+  background-size: 24px;
+}
+.raygun-emblem__ring--animate {
+  animation: raygun-ring 1s forwards ease-out;
+  -webkit-animation: raygun-ring 1s forwards ease-out;
+}
+
+// bolt
+.raygun-emblem__bolt {
+  background-image: url('/Content/Images/logo/raygun-bolt.png');
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.raygun-emblem__bolt--animate {
+  animation: rotation 1s forwards ease-out;
+  -webkit-animation: rotation 1s forwards ease-out;
+}
+
+html.svg {
+  .raygun-emblem__bolt {
+    background-image: url('/Content/Images/logo/raygun-bolt.svg');
+  }
+}
+
+// wave
+.raygun-emblem__shockwave {
+  border-radius: 50%;
+}
+.raygun-emblem__shockwave--animate {
+  will-change: box-shadow;
+  animation: raygun-shockwave 1s forwards ease-out;
+  -webkit-animation: raygun-shockwave 1s forwards ease-out;
+}
+
+
+@keyframes raygun-ring {
+  0% {border-color: white;}
+  50% {border-color: rgba(white,0.6);}
+  100% {border-color: white;}
+}
+@-webkit-keyframes raygun-ring {
+  0% {border-color: white;}
+  50% {border-color: rgba(white,0.6);}
+  100% {border-color: white;}
+}
+@keyframes raygun-shockwave {
+  0% {
+    box-shadow: 0 0 0 0 rgba(white,0.4);
+    background-color: rgba(white,0.4);
+  }
+  100% {
+    box-shadow: 0 0 0 280px rgba(white,0);
+    background-color: rgba(white,0);
+  }
+}
+@-webkit-keyframes raygun-shockwave {
+  0% {
+    box-shadow: 0 0 0 0 rgba(white,0.4);
+    background-color: rgba(white,0.4);
+  }
+  100% {
+    box-shadow: 0 0 0 280px rgba(white,0);
+    background-color: rgba(white,0);
+  }
+}
+
+
+// header controls layout
+.header-controls {
+  position: relative;
+  padding: 6px 44px;
+  height: $header-height;
+  @include screen-min {
+    padding: 6px 0;
+  }
+}
+
+.header-controls__button {
+  border-right: 1px solid rgba($black,0.2);
+  padding: 0 4px;
+  @include screen-min {
+    float: left!important;
+    position: static!important;
+    padding: 0 4px!important;
+  }
+}
+
+.header-controls__button--global {
+  position: absolute;
+  left: 0;
+  top: 6px;
+}
+.header-controls__button--add {
+  position: absolute;
+  right: 0;
+  top: 6px;
+}
+
+.header-controls__button--mobile {
+  display: none;
+}
+
+
+@include screen-min {
+  .header-controls__button--add {
+    display: none;
+  }
+}
+
+// sidebar layout changes
+.layout--sidebar {
+  @include screen-min {
+    .header-controls__button--mobile {
+      display: block;
+    }
+  }
+}
+
+
+//-- header buttons
+.header-button {
+  @extend noselect;
+  display: block;
+  cursor: pointer;
+  position: relative;
+  height: 36px;
+  padding: 10px;
+  color: rgba($white,0.9);
+  font-weight: bold;
+  line-height: 16px;
+  &:active,
+  &:hover {
+    color: $white;
+  }
+}
+
+
+// applications button only
+.header-button__icon {
+  position: absolute;
+  padding: 10px;
+}
+
+.header-button--applications {
+  padding-left: 36px;
+
+  .header-button__icon {
+    top: 0;
+    left: 0;
+  }
+
+  @include screen-min {
+    padding: 10px;
+
+    .header-button__text {
+      display: none;
+    }
+
+    .header-button__icon {
+      position: static;
+      padding: 0;
+    }
+  }
+}
+
+//-- Owner breadcrumb
+.header-breadcrumb {
+  @include screen-min {
+    display: none;
+  }
+}
+
+.header-breadcrumb__item,
+.header-breadcrumb__arrow {
+  float: left;
+}
+
+.header-breadcrumb__arrow {
+  padding: 12px 0;
+  color: rgba($black,0.4);
+}
+
+.header-button--breadcrumb {
+  padding-right: 40px;
+
+  .header-button__icon {
+    top: 0;
+    right: 0;
+  }
+}
+
+.breadcrumb-button {
+  display: block;
+  cursor: pointer;
+  position: relative;
+  height: 40px;
+  padding: 12px;
+  color: rgba($white,0.9);
+  font-weight: bold;
+  line-height: 16px;
+
+  &:hover,
+  &:active {
+    color: $white;
+  }
+}
+
+.breadcrumb-button--arrow {
+  padding-right: 40px;
+}
+
+.breadcrumb-button__icon {
+  position: absolute;
+  padding: 12px;
+  top: 0;
+  right: 0;
+}

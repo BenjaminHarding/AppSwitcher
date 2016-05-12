@@ -1,0 +1,52 @@
+// Raygun Layouts
+
+// Layout Variables
+$header-height: 48px;
+$footer-height: 48px;
+$sidebar-width: 240px;
+
+
+html {
+  height: 100%;
+  min-width: 320px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background: $background-color;
+}
+
+// on body
+body.layout {
+  position: relative;
+  min-height: 100%;
+  padding-top: $header-height;
+  padding-bottom: $footer-height;
+  @include screen-min {
+    padding-bottom: 0;
+  }
+}
+
+// Layout classes (applied to body)
+body.layout--sidebar {
+  padding-left: $sidebar-width;
+  @include screen-min {
+    padding-left: 0;
+  }
+}
+
+// Layout fullscreen
+body.layout--fullscreen {
+  padding: 0;
+  overflow: hidden;
+  .layout__footer,
+  .layout__sidebar,
+  .layout__header {
+    display: none;
+  }
+  .layout__content {
+    height: 100%;
+  }
+}
+
+// layout content
+.layout__content {}
+

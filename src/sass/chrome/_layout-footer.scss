@@ -1,0 +1,68 @@
+// Layout-footer region
+
+body.layout--sidebar {
+  .layout__footer {
+    padding-left: $sidebar-width;
+    @include screen-min {
+      padding-left: 0;
+    }  
+  }
+}
+
+.layout__footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: $background-color-dark;
+  @include screen-min {
+    display: none;
+  }
+}
+
+
+.footer-container {
+  padding: 16px 24px;
+}
+
+.footer-content {
+  padding: 0 240px 0 0;
+  position: relative;
+}
+
+
+.footer-content__navigation {
+  position: relative;
+}
+
+.footer-navigation {
+  li {
+    margin: 0 24px 0 0;
+    float: left;
+    line-height: 16px;
+    @include font-size(1.2);
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
+
+a.footer-navigation__link {
+  cursor: pointer;
+  line-height: 16px;
+  color: $text-grey;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+
+.footer-content__secondary {
+  color: $text-grey;
+  line-height: 16px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  @include font-size(1.2);
+}

@@ -1,0 +1,299 @@
+﻿// updated application switcher
+
+
+.app-switcher {
+  position: relative;
+  background: $white;
+  padding: 64px 0 64px;
+  border-radius: 0 0 3px 3px;
+  box-shadow: $modal-shadow;
+  max-width: 960px;
+  height: 100%;
+  max-height: 100%;
+  overflow: hidden;
+}
+.app-switcher__heading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 64px;
+  width: 100%;
+  padding: 12px 24px;
+  border-bottom: 1px solid $color-border;
+  @include screen-mob {
+    padding: 12px;
+  }
+}
+
+
+// app switcher heading component
+.app-switcher-heading {
+  position: relative;
+  height: 40px;
+}
+.app-switcher-heading__search {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 40px;
+  width: 400px;
+  max-width: 100%;
+  @include screen-mob {
+    width: 100%;
+  }
+}
+.app-switcher-heading__layout-control {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 40px;
+  max-width: 100%;
+  @include screen-mob {
+    display: none;
+  }
+}
+
+
+.app-switcher__content {
+  @include touch-scroll;
+  //height: 400px;
+  // height based on application count / or 100%
+  height: 100%;
+  overflow-y: auto;
+  padding: 24px;
+  @include screen-mob {
+    padding: 24px 12px;
+  }
+}
+
+.app-content {
+  display: block;
+  height: 600px;
+  //height: 1200px;
+  background: $color-grey-light;
+}
+
+.app-switcher__footer {
+  background: $white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 64px;
+  width: 100%;
+  padding: 12px 24px;
+  border-top: 1px solid $color-border;
+  @include screen-mob {
+    padding: 12px;
+  }
+}
+
+
+
+
+// Application switcher layout control
+.app-switcher-layout {
+  width: 100px;
+  border-radius: 3px;
+  overflow: hidden;
+  border: 1px solid $color-border;
+}
+.app-switcher-layout__button {
+  cursor: pointer;
+  display: block;
+  float: left;
+  width: 50%;
+  height: 34px;
+  padding: 9px 12px;
+}
+.app-switcher-layout__button {
+  background: $white;
+  color: $text-grey;
+  &:hover {
+    background: $color-grey-lighter;
+    color: $text-black;
+  }
+  &:active {
+    background: $color-grey-light;
+    color: $text-black;
+  }
+}
+.app-switcher-layout__button--active {
+  background: $color-grey!important;
+  color: $text-black!important;
+}
+
+
+
+
+
+
+// Application switcher button - desktop
+.app-button {
+  margin: 0 0 4px; // TEMP
+
+  @include noSelect();
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  padding: 12px 48px;
+  color: rgba(white,0.8);
+  background: rgba($color-stealth,0.3);
+  height: 48px;
+  &:active {
+    background: rgba($color-stealth,0.4);
+  }
+  &:hover,
+  &:active {
+    color: rgba(white,1);
+  }
+}
+
+.app-button--owner {
+  padding: 10px 48px;
+  .app-button__application-name {
+    line-height: 16px;
+  }
+  .app-button__application-icon {
+    // ADD MASK HERE
+    -webkit-mask-image: url(/Content/Images/chrome/application-mask.svg);
+    -moz-mask-image: url(/Content/Images/chrome/application-mask.svg);
+    -o-mask-image: url(/Content/Images/chrome/application-mask.svg);
+    mask-image: url(/Content/Images/chrome/application-mask.svg);
+  }
+  .app-button__owner-name,
+  .app-button__owner-icon {
+    display: block;
+  }
+}
+
+.app-button__application-icon {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  background: $white;
+}
+.app-button__switcher-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  padding: 4px;
+  //background: $white;
+}
+.app-button__application-name {
+  @include noWrap();
+  @include font-size(1.4);
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.app-button__owner-icon {
+  display: none;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: $white;
+  border-radius: 3px;
+  top: 26px;
+  left: 26px;
+  //box-shadow: 0 0 0 2px $color-azure-dark;
+}
+.app-button__owner-name {
+  @include noWrap();
+  @include font-size(1.0);
+  text-transform: uppercase;
+  line-height: 16px;
+  display: none;
+}
+
+
+// switcher applications
+// -- list view
+// -- grid view
+
+.app-group {
+  padding: 24px 0 0;
+}
+.app-group--margin {
+  //margin: 0 0 24px;
+}
+
+
+.app-group__heading {
+  color: $text-black;
+  padding: 0 0 8px;
+  border-bottom: 1px solid $color-border;
+}
+
+.app-group__layout {
+  padding: 12px 0;
+  margin: -4px;
+}
+.app-group__layout--list {
+  .app-group__item {
+    width: 100%;
+  }
+}
+.app-group__layout--grid {
+  .app-group__item {
+    width: (100%/3);
+    @include screen-med {
+      width: (100%/2);
+    }
+    @include screen-mob {
+      width: (100%/1);
+    }
+  }
+}
+
+
+
+.app-group__item {
+  float: left;
+  width: 50%;
+  padding: 4px;
+}
+
+
+// app item
+.app-item {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 12px 12px 48px;
+  border-radius: 3px;
+  height: 48px;
+  background: $color-grey;
+  color: $text-black;
+  &:hover {
+    background: $color-grey-light;
+  }
+  &:active {
+    background: $color-grey-dark;
+  }
+}
+
+.app-item--selected {
+  color: $text-white!important;
+  background: $color-azure!important;
+}
+
+.app-item__icon {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  height: 24px;
+  width: 24px;
+  background: #333;
+  border-radius: 3px;
+}
+.app-item__name {
+  @include noSelect;
+  @include noWrap;
+  @include font-size(1.4);
+  font-weight: bold;
+  line-height: 24px;
+}
