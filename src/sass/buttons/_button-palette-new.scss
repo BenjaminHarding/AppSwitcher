@@ -1,0 +1,202 @@
+// button creation
+.button {
+  user-select: none!important;
+  cursor: pointer;
+  font-family: $font-family;
+  margin: 0;
+  display: block;
+  width: 100%;
+  border-radius: 4px;
+  font-weight: bold;
+  text-align: center;
+  border: 2px solid #000;
+  outline: none;
+  text-decoration: none;
+  @include font-size(1.4);
+  &:focus {
+    //border-color: $color-yellow;
+  }
+}
+
+// sizes
+//--36
+.button-36,
+.button--36 {
+  height: 36px;
+  line-height: 24px;
+  padding: 4px 12px;
+}
+//--40
+.button-40,
+.button--40 {
+  height: 40px;
+  line-height: 24px;
+  padding: 6px 16px;
+}
+//--48
+.button-48,
+.button--48 {
+  height: 48px;
+  line-height: 24px;
+  padding: 8px 20px;
+}
+
+
+// mixins
+@mixin button-color ($standard,$light,$dark) {
+  color: $text-white;
+  background: $standard;
+  border-color: $standard;
+  &:hover {
+    background: $light;
+    border-color: $light;
+  }
+  &:active {
+    background: $dark;
+    border-color: $dark;
+  }
+}
+
+@mixin button-color-stroke ($standard,$light,$dark) {
+  color: $standard;
+  background: transparent;
+  border-color: $standard;
+  &:hover {
+    color: $light;
+    background: transparent;
+    border-color: $light;
+  }
+  &:active {
+    color: $dark;
+    background: transparent;
+    border-color: $dark;
+  }
+}
+
+
+// colors
+//--lightning
+.button-yellow,
+.button--yellow {
+  @include button-color(
+      $color-lightning,
+      $color-lightning-light,
+      $color-lightning-dark
+  );
+}
+
+.button--yellow-stroke {
+  @include button-color-stroke (
+      $color-lightning,
+      $color-lightning-light,
+      $color-lightning-dark
+  );
+}
+
+//--forest
+.button-green,
+.button--green {
+  @include button-color(
+      $color-forest,
+      $color-forest-light,
+      $color-forest-dark
+  );
+}
+.button--green-stroke {
+  @include button-color-stroke (
+      $color-forest,
+      $color-forest-light,
+      $color-forest-dark
+  );
+}
+
+//--blue
+.button-blue,
+.button--azure {
+  @include button-color(
+      $color-azure,
+      $color-azure-light,
+      $color-azure-dark
+  );
+}
+.button--azure-stroke {
+  @include button-color-stroke (
+      $color-azure,
+      $color-azure-light,
+      $color-azure-dark
+  );
+}
+
+
+//--ember
+.button-red,
+.button--red {
+  @include button-color(
+      $color-ember,
+      $color-ember-light,
+      $color-ember-dark
+  );
+}
+.button--ember-stroke {
+  @include button-color-stroke (
+      $color-ember,
+      $color-ember-light,
+      $color-ember-dark
+  );
+}
+
+//--grey
+.button-grey,
+.button--grey {
+  @include button-color(
+      $color-grey-dark,
+      $color-grey-dark,
+      $color-grey-dark
+  );
+}
+.button--grey-stroke {
+  @include button-color-stroke (
+      $color-grey-dark,
+      $color-grey-dark,
+      $color-grey-dark
+  );
+}
+
+//--disabled
+.button--disabled {
+  cursor: not-allowed!important;
+  color: $text-white!important;
+  border-color: $color-grey!important;
+  background: $color-grey!important;
+}
+
+//button__icon
+.button__icon {
+  width: 24px;
+  height: 24px;
+  margin: 0 auto;
+}
+
+
+// button inner template
+.button-inner {
+  position: relative;
+  display: inline-block;
+}
+.button-inner--block {
+  display: block;
+}
+.button-inner--icon-after {
+  padding-right: 32px;
+}
+
+.button-inner__text {
+  line-height: 24px;
+}
+.button-inner__icon-after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 24px;
+  height: 24px;
+}
