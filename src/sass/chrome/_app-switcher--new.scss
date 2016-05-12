@@ -1,0 +1,20 @@
+
+//App switcher main
+.app-switcher {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+
+  display: none;
+  width: 100%;
+  max-width: 800px;
+
+  height: 400px;
+}
+
+.app-switcher--visible {
+  display: block;
+}
+
+
+//Header
