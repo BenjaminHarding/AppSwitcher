@@ -5,16 +5,23 @@
   top: 40px;
   left: 40px;
 
+  z-index: 100;
+
   display: none;
   width: 100%;
   max-width: 800px;
 
-  height: 400px;
+  min-height: 400px;
+
+  background-color: $white;
 }
 
 .app-switcher--visible {
   display: block;
 }
 
+.app-switcher__header {}
 
-//Header
+.app-switcher__footer {}
+
+.app-switcher__content {}
