@@ -24,6 +24,12 @@
 
 .app-switcher__content {}
 
+.app-group__content {
+  min-height: 50px;
+  background-color: grey;
+  overflow: auto;
+}
+
 // App
 .app-switcher-app {
   display: block;

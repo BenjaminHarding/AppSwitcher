@@ -1,17 +1,26 @@
 (function($, window) {
 
-  var addElementEvents = function(element) {
+  window.AppSwitcher = window.AppSwitcher || {};
 
-    $( element ).on("focus", onFocus);
-    $( element ).on("blur", onBlur);
-    $( element ).on('keydown', onKeyUp);
+  var titleClass = '.js-group-title';
+
+  window.AppSwitcher.addElementEvents = function(element, findInside) {
+
+    if( findInside ) {
+      element = $(element).find(titleClass);
+    }
+
+    $(element).attr('contenteditable', true)
+      .on("focus", onFocus)
+      .on("blur", onBlur)
+      .on('keydown', onKeyUp);
 
   };
 
   $(document).ready(function() {
 
-    $('.js-group-title').attr('contenteditable', true).each(function(index,element) {
-      addElementEvents( element );
+    $(titleClass).each(function(index,element) {
+      window.AppSwitcher.addElementEvents( element );
     });
 
   });
