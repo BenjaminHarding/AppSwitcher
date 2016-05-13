@@ -77,8 +77,8 @@
 
   // Dragging Classes
   var dragClasses = {
-    dragging: 'app-switcher-app--dragging',
-    enter: 'app-group__content--over'
+    dragging: 'application-grid__item--dragging',
+    enter: 'application-grid--over'
   };
 
   // Drag Events
