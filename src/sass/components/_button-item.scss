@@ -1,0 +1,51 @@
+.button-item {
+  position: relative;
+}
+
+.button-item:hover {
+  .sort-item__tooltip {
+    opacity: 1;
+    transform: translateY(4px);
+  }
+}
+
+.button-item__button {}
+.button-item__tooltip {
+  pointer-events: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: all 160ms ease-out;
+}
+.button-button {
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  padding: 10px;
+  border-radius: 4px;
+  background: $color-grey;
+  &:hover {
+    background: $color-grey-light;
+  }
+  &:active {
+    background: $color-grey-dark;
+  }
+}
+
+.button-button--active {
+  background: $color-azure!important;
+  color: white!important;
+}
+
+
+.button-tooltip {
+  transform: translateX(-50%);
+  line-height: 32px;
+  padding: 0 16px;
+  background: $color-stealth;
+  color: white;
+  border-radius: 4px;
+  white-space: nowrap;
+}
