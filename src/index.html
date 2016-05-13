@@ -81,10 +81,9 @@
 
 
 
-
-    <!-- new markup -->
-
-
+<!-- new markup -->
+    <div class="layout__switcher layout__switcher--hidden js-switcher-target ">
+      <div class="switcher js-switcher-content js-app-switcher">
     <div class="layout__switcher">
       <div class="switcher">
 
@@ -176,67 +175,63 @@
         </div>
 
         <!-- content -->
-        <div class="switcher__body">
-
-
-
-
+        <div class="switcher__body js-app-container">
 
             <div class="switcher-body">
               <div class="switcher-body__create">
-                <button class="button button--36 button--grey">Create group</button>
+                <button class="button button--36 button--grey js-create-group">Create group</button>
               </div>
               <div class="switcher-body__groups">
                 <!-- application groups -->
 
-                <div class="application-group application-group--margin">
+                <div class="application-group application-group--margin js-group">
                   <div class="application-group__header">
                     <div class="application-header">
                       <div class="application-header__move">
                         <div class="flat-icon icon--16 icon--move"></div>
                       </div>
-                      <div class="application-header__name">
+                      <div class="application-header__name js-group-title">
                         Group name
                       </div>
-                      <div class="application-header__delete">
+                      <div class="application-header__delete js-group-delete">
                         <div class="flat-icon icon--16 icon--trash"></div>
                       </div>
                     </div>
                   </div>
                   <div class="application-group__applications">
 
-                    <div class="application-grid clearfix">
+                    <div class="application-grid clearfix js-drag-app-group">
 
                       <!-- items -->
-                      <div class="application-grid__item">
+                      <div class="application-grid__item js-drag-app">
                         <div class="application-item">
                           <div class="application-item__icon"></div>
                           <div class="application-item__name">Application</div>
                         </div>
                       </div>
 
-                      <div class="application-grid__item">
+                      <div class="application-grid__item js-drag-app">
                         <div class="application-item">
                           <div class="application-item__icon"></div>
                           <div class="application-item__name">Application</div>
                         </div>
                       </div>
 
-                      <div class="application-grid__item">
+                      <div class="application-grid__item js-drag-app">
                         <div class="application-item">
                           <div class="application-item__icon"></div>
                           <div class="application-item__name">Application</div>
                         </div>
                       </div>
 
-                      <div class="application-grid__item">
+                      <div class="application-grid__item js-drag-app">
                         <div class="application-item">
                           <div class="application-item__icon"></div>
                           <div class="application-item__name">Application</div>
                         </div>
                       </div>
 
-                      <div class="application-grid__item">
+                      <div class="application-grid__item js-drag-app">
                         <div class="application-item">
                           <div class="application-item__icon"></div>
                           <div class="application-item__name">Application</div>
@@ -249,27 +244,20 @@
                   </div>
                 </div>
 
-
-                <div class="application-group">
+                <div class="application-group js-group js-app-ungrouped">
                   <div class="application-group__header">
                     <div class="application-header">
-                      <div class="application-header__move">
-                        <div class="flat-icon icon--16 icon--move"></div>
-                      </div>
                       <div class="application-header__name">
-                        Group name
-                      </div>
-                      <div class="application-header__delete">
-                        <div class="flat-icon icon--16 icon--trash"></div>
+                        Uncategorized
                       </div>
                     </div>
                   </div>
                   <div class="application-group__applications">
 
-                    <div class="application-grid">
+                    <div class="application-grid clearfix js-drag-app-group">
 
                       <!-- empty -->
-                      <div class="application-grid__empty">
+                      <div class="application-grid__empty js-drag-group-empty">
                           Drag applications into this group
                       </div>
 
@@ -277,9 +265,6 @@
 
                   </div>
                 </div>
-
-
-
 
 
               </div>

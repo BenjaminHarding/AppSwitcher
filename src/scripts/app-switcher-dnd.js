@@ -27,6 +27,22 @@
     element.addEventListener('dragend', dragEvents.end, false);
   };
 
+  window.AppSwitcher.checkEmptyGroup = function(element) {
+
+    //.js-drag-group-empty
+    var $element = $(element);
+
+    if( $element.find('.'+dragElements[1]).length >= 1 ) {
+      $element.find('.js-drag-group-empty').remove();
+      return;
+    }
+
+    var $emptyGroupElement = $('<div class="application-grid__empty js-drag-group-empty">Drag applications into this group</div>');
+
+    $element.append( $emptyGroupElement );
+
+  };
+
   $(document).ready(function() {
 
     // if (!window.Modernizr.draganddrop) {
@@ -111,7 +127,10 @@
       if( dragEvents.currentElement !== this) {
         //Switch the element we dragged for this one
         //dragEvents.currentElement.innerHTML = this.innerHTML;
-        $( dragEvents.currentElement ).remove();
+        var $currentTarget = $( dragEvents.currentElement ),
+        $currentTargetParent = $currentTarget.closest( '.' + dragElements[0] );
+
+        $currentTarget.remove();
 
         //Create element, add to dom, append elements
         var element = $( event.dataTransfer.getData('text/html') )[1],
@@ -145,12 +164,15 @@
 
         });
 
+
         if( childLeft ) {
           $( element ).insertAfter( childLeft );
         } else {
           $( element ).appendTo( $(this) );
         }
 
+        window.AppSwitcher.checkEmptyGroup( $(element).closest( '.' + dragElements[0] ) );
+        window.AppSwitcher.checkEmptyGroup( $currentTargetParent );
         window.AppSwitcher.addAppDragEvents( element );
       }
 
