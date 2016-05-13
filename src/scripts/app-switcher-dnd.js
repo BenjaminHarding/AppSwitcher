@@ -37,6 +37,10 @@
       return;
     }
 
+    if( $element.find('.js-drag-group-empty').length > 1 ) {
+      return;
+    }
+
     var $emptyGroupElement = $('<div class="application-grid__empty js-drag-group-empty">Drag applications into this group</div>');
 
     $element.append( $emptyGroupElement );
@@ -73,8 +77,8 @@
 
   // Dragging Classes
   var dragClasses = {
-    dragging: 'app-switcher-app--dragging',
-    enter: 'app-group__content--over'
+    dragging: 'application-grid__item--dragging',
+    enter: 'application-grid--over'
   };
 
   // Drag Events

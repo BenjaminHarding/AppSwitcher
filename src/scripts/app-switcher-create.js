@@ -33,7 +33,7 @@
     </div>` );
 
     // newGroup
-    $newGroup.insertBefore( $( '.js-app-ungrouped' ) );
+    $newGroup.insertBefore( $( '.js-group:first-child' ) );
     window.AppSwitcher.addGroupDragEvents( $newGroup[0], true );
     window.AppSwitcher.addElementEvents( $newGroup[0], true );
     window.AppSwitcher.addDeleteEvents( $newGroup[0], true );
