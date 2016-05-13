@@ -28,6 +28,8 @@ html {
   height: 100%;
   padding: 56px 12px;
   background: rgba($color-stealth,0.6);
+  opacity: 0;
+   transition: opacity 200ms ease-out;
 }
 
 .layout__header {
@@ -97,4 +99,24 @@ html {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+
+
+
+.layout__switcher--hidden {
+  visibility: hidden;
+}
+
+.switcher {
+  transform: translate(0,24px);
+  transition: transform 200ms ease-out;
+}
+
+.switcher--visible {
+  transform: translate(0,0);
+}
+
+.layout__switcher--visible {
+  opacity: 1;
 }
