@@ -25,6 +25,7 @@
     });
 
     closestGroup.remove();
+    window.AppSwitcher.checkEmptyGroup( $unGroupedGroup.find( '.js-drag-app-group' ) );
 
   };
 

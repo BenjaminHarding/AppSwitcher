@@ -7,85 +7,9 @@
   </head>
   <body class="layout">
 
-    <!-- layout applications -->
-
-    <div class="layout__switcher">
-      <div class="app-switcher app-switcher--visible">
-
-    <div class="layout__applications layout__header--purple">
-      <div class="app-switcher app-switcher--visible js-app-switcher">
-
-        <div class="app-switcher__header">
-          <h1>App Switcher</h1>
-        </div>
-
-        <div class="app-switcher__content">
-
-          <div class="app-group">
-            <div class="app-group__heading">
-              <h2 class="js-group-title">Group A</h2>
-            </div>
-
-            <div class="app-group__content js-drag-app-group">
-
-            </div>
-          </div>
-
-          <div class="app-group">
-            <div class="app-group__heading">
-              <h2 class="js-group-title">Uncategorized</h2>
-            </div>
-
-            <div class="app-group__content js-drag-app-group">
-
-              <div class="app-switcher-app js-drag-app">A</div>
-              <div class="app-switcher-app js-drag-app">B</div>
-              <div class="app-switcher-app js-drag-app">C</div>
-              <div class="app-switcher-app js-drag-app">D</div>
-              <div class="app-switcher-app js-drag-app">E</div>
-              <div class="app-switcher-app js-drag-app">F</div>
-              <div class="app-switcher-app js-drag-app">G</div>
-              <div class="app-switcher-app js-drag-app">H</div>
-              <div class="app-switcher-app js-drag-app">A</div>
-              <div class="app-switcher-app js-drag-app">B</div>
-              <div class="app-switcher-app js-drag-app">C</div>
-              <div class="app-switcher-app js-drag-app">D</div>
-              <div class="app-switcher-app js-drag-app">E</div>
-              <div class="app-switcher-app js-drag-app">F</div>
-              <div class="app-switcher-app js-drag-app">G</div>
-              <div class="app-switcher-app js-drag-app">H</div>
-              <div class="app-switcher-app js-drag-app">A</div>
-              <div class="app-switcher-app js-drag-app">B</div>
-              <div class="app-switcher-app js-drag-app">C</div>
-              <div class="app-switcher-app js-drag-app">D</div>
-              <div class="app-switcher-app js-drag-app">E</div>
-              <div class="app-switcher-app js-drag-app">F</div>
-              <div class="app-switcher-app js-drag-app">G</div>
-              <div class="app-switcher-app js-drag-app">H</div>
-
-            </div>
-          </div>
-
-
-        </div>
-
-        <div class="app-switcher__footer">
-
-        </div>
-</div>
-</div>
-      </div>
-    </div>
-
-
-
-
-
-<!-- new markup -->
+    <!-- new markup -->
     <div class="layout__switcher layout__switcher--hidden js-switcher-target ">
       <div class="switcher js-switcher-content js-app-switcher">
-    <div class="layout__switcher">
-      <div class="switcher">
 
         <!-- header -->
         <div class="switcher__header">
@@ -206,35 +130,35 @@
                       <div class="application-grid__item js-drag-app">
                         <div class="application-item">
                           <div class="application-item__icon"></div>
-                          <div class="application-item__name">Application</div>
+                          <div class="application-item__name js-group-title">Application</div>
                         </div>
                       </div>
 
                       <div class="application-grid__item js-drag-app">
                         <div class="application-item">
                           <div class="application-item__icon"></div>
-                          <div class="application-item__name">Application</div>
+                          <div class="application-item__name js-group-title">Application</div>
                         </div>
                       </div>
 
                       <div class="application-grid__item js-drag-app">
                         <div class="application-item">
                           <div class="application-item__icon"></div>
-                          <div class="application-item__name">Application</div>
+                          <div class="application-item__name js-group-title">Application</div>
                         </div>
                       </div>
 
                       <div class="application-grid__item js-drag-app">
                         <div class="application-item">
                           <div class="application-item__icon"></div>
-                          <div class="application-item__name">Application</div>
+                          <div class="application-item__name js-group-title">Application</div>
                         </div>
                       </div>
 
                       <div class="application-grid__item js-drag-app">
                         <div class="application-item">
                           <div class="application-item__icon"></div>
-                          <div class="application-item__name">Application</div>
+                          <div class="application-item__name js-group-title">Application</div>
                         </div>
                       </div>
 
@@ -286,7 +210,7 @@
 
     <!-- Layout -->
     <div class="layout__header">
-      <div class="header-button">
+      <div class="header-button js-switcher-toggle">
         <div class="header-button__avatar"></div>
         <div class="header-button__name">Application</div>
         <div class="header-button__icon">
@@ -301,6 +225,9 @@
 
   </body>
 
+  <script type="text/javascript" src="scripts/app-switcher-button.js"></script>
+  <script type="text/javascript" src="scripts/app-switcher-create.js"></script>
+  <script type="text/javascript" src="scripts/app-switcher-delete.js"></script>
   <script type="text/javascript" src="scripts/app-switcher-dnd.js"></script>
   <script type="text/javascript" src="scripts/app-switcher-rename.js"></script>
 
