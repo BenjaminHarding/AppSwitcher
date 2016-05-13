@@ -27,7 +27,9 @@
 .app-switcher__content {}
 
 // App Groups
-.app-group {}
+.app-group {
+  user-select: none;
+}
 
 .app-group__heading {}
 

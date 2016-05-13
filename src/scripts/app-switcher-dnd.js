@@ -95,9 +95,31 @@
         $( dragEvents.currentElement ).remove();
 
         //Create element, add to dom, append elements
-        var $element = $( event.dataTransfer.getData('text/html') )[1];
-        $( $element ).appendTo( $(this) );
-        addAppDragEvents( $element );
+        var element = $( event.dataTransfer.getData('text/html') )[1],
+          $container = $( this );
+
+        var childLeft,
+          childLeftOffset;
+
+        $container.children('.' + dragElements[1]).each(function() {
+
+          var $tempChild = $(this),
+            offset = $tempChild.offset();
+
+          if( event.clientX > offset.left && (!childLeft || offset.left > childLeftOffset.left )  ) {
+            childLeft = $tempChild[0]; //If the target is too far
+            childLeftOffset = offset;
+          }
+
+        });
+
+        if( childLeft ) {
+          $( element ).insertAfter( childLeft );
+        } else {
+          $( element ).appendTo( $(this) );
+        }
+
+        addAppDragEvents( element );
 
       }
 
