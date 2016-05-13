@@ -33,6 +33,8 @@
     // Apps
     $( '.' + dragElements[1] ).attr('draggable', true).each(function(index,element) {
 
+      element.style.backgroundColor = `rgb( ${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)} )`;
+
       addAppDragEvents( element );
 
     });
@@ -118,7 +120,18 @@
           var $tempChild = $(this),
             offset = $tempChild.offset();
 
-          if( mouseX > offset.left && (!childLeft || offset.left > childLeftOffset.left )  ) {
+          if( !childLeft ) {
+            childLeft = this;
+            childLeftOffset = offset;
+            return;
+          }
+
+          if( mouseX > offset.left && offset.left > childLeftOffset.left ) {
+            childLeft = $tempChild[0];
+            childLeftOffset = offset;
+          }
+
+          if( mouseY > offset.top && offset.top > childLeftOffset.top ) {
             childLeft = $tempChild[0]; //If the target is too far
             childLeftOffset = offset;
           }

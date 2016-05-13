@@ -34,6 +34,7 @@
 .app-group__heading {}
 
 .app-group__content {
+  overflow: auto;
   min-height: 100px;
   background-color: grey;
 }
@@ -51,6 +52,7 @@
 
   background-color: red;
   margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 [draggable] {
