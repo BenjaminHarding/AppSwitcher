@@ -37,7 +37,7 @@
       return;
     }
 
-    if( $element.find('.js-drag-group-empty').length > 1 ) {
+    if( $element.find('.js-drag-group-empty').length >= 1 ) {
       return;
     }
 
@@ -120,7 +120,7 @@
     },
 
     leave: function( event ) {
-      $(this).addClass( dragClasses.enter );
+      $(this).removeClass( dragClasses.enter );
     },
 
     drop: function( event ) {
@@ -181,6 +181,7 @@
       }
 
       $(this).removeClass( dragClasses.enter );
+      //$currentTargetParent.removeClass( dragClasses.enter );
 
       return false;
     }
