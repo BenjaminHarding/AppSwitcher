@@ -12,7 +12,24 @@
 
 
 // application-group
-.application-group {}
+.application-group {
+  animation: yolo 400ms ease-out;
+}
+
+@keyframes yolo {
+  000% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  080% {
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .application-group--margin {
   margin: 0 0 24px;
 }
@@ -53,7 +70,7 @@
 }
 .application-grid__item {
   float: left;
-  width: 25%;
+  width: (100%/3);
   padding: 4px;
 }
 .application-grid__empty {
@@ -63,11 +80,21 @@
 }
 
 
+
 // application item
 .application-item {
+  cursor: pointer;
   position: relative;
   background: white;
   padding: 16px 16px 16px 56px;
+  &:hover {
+    z-index: 10;
+    box-shadow: 0 4px 24px rgba($color-stealth,0.4),0 4px 12px rgba($color-stealth,0.4);
+  }
+  &:active {
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba($color-stealth,0.4);
+  }
 }
 .application-item__name {
   line-height: 24px;

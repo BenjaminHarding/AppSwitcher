@@ -28,13 +28,6 @@ html {
   height: 100%;
   padding: 56px 12px;
   background: rgba($color-stealth,0.6);
-
-  opacity: 0;
-  transition: opacity 200ms ease-out;
-}
-
-.layout__switcher--visible {
-  opacity: 1;
 }
 
 .layout__header {
@@ -68,6 +61,7 @@ html {
 }
 
 .header-button {
+  cursor: pointer;
   width: 220px;
   height: 48px;
   position: relative;
@@ -84,7 +78,6 @@ html {
   }
 }
 .header-button__avatar {
-  cursor: pointer;
   position: absolute;
   top: 12px;
   left: 12px;
@@ -104,17 +97,4 @@ html {
   position: absolute;
   top: 0;
   right: 0;
-}
-
-.layout__switcher--hidden {
-  visibility: hidden;
-}
-
-.switcher {
-  transform: translate(0,24px);
-  transition: transform 200ms ease-out;
-}
-
-.switcher--visible {
-  transform: translate(0,0);
 }
