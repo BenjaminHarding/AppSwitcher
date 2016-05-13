@@ -137,7 +137,7 @@
         $currentTarget.remove();
 
         //Create element, add to dom, append elements
-        var element = $( event.dataTransfer.getData('text/html') )[1],
+        var element = $( event.dataTransfer.getData('text/html') )[0],
           $container = $( this );
 
         var childLeft,

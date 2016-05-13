@@ -3,7 +3,7 @@
 }
 
 .button-item:hover {
-  .sort-item__tooltip {
+  .button-item__tooltip {
     opacity: 1;
     transform: translateY(4px);
   }
@@ -14,7 +14,7 @@
   pointer-events: none;
   position: absolute;
   top: 100%;
-  left: 50%;
+  right: 0;
   opacity: 0;
   transform: translateY(12px);
   transition: all 160ms ease-out;
@@ -24,13 +24,12 @@
   width: 36px;
   height: 36px;
   padding: 10px;
-  border-radius: 4px;
-  background: $color-grey;
+    color: #777;
   &:hover {
-    background: $color-grey-light;
+    color: #333;
   }
   &:active {
-    background: $color-grey-dark;
+    color: $color-ember;
   }
 }
 
@@ -41,7 +40,6 @@
 
 
 .button-tooltip {
-  transform: translateX(-50%);
   line-height: 32px;
   padding: 0 16px;
   background: $color-stealth;

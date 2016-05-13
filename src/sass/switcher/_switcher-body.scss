@@ -43,6 +43,7 @@
 .application-header {
   background: white;
   position: relative;
+  z-index: 10;
   padding: 0 48px;
 }
 .application-header__name {
@@ -54,7 +55,7 @@
   position: absolute;
   right: 0;
   top: 0;
-  padding: 12px;
+  padding: 2px;
 }
 .application-header__move {
   position: absolute;
