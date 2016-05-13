@@ -55,8 +55,18 @@
   // Drag Events
   var dragEvents = {
     currentElement: null,
+    //Mouse offset
+    currentElementMouseOffset: {
+      x: 0,
+      y: 0
+    },
     started: function( event ) {
       dragEvents.currentElement = this;
+
+      var offset = $( this ).offset();
+
+      dragEvents.currentElementMouseOffset.x = offset.left - event.clientX;
+      dragEvents.currentElementMouseOffset.y = offset.top - event.clientY;
 
       event.dataTransfer.effectAllowed = 'move';
       event.dataTransfer.setData('text/html', this.outerHTML);
@@ -99,14 +109,16 @@
           $container = $( this );
 
         var childLeft,
-          childLeftOffset;
+          childLeftOffset,
+          mouseX = dragEvents.currentElementMouseOffset.x + event.clientX,
+          mouseY = dragEvents.currentElementMouseOffset.y + event.clientY;
 
         $container.children('.' + dragElements[1]).each(function() {
 
           var $tempChild = $(this),
             offset = $tempChild.offset();
 
-          if( event.clientX > offset.left && (!childLeft || offset.left > childLeftOffset.left )  ) {
+          if( mouseX > offset.left && (!childLeft || offset.left > childLeftOffset.left )  ) {
             childLeft = $tempChild[0]; //If the target is too far
             childLeftOffset = offset;
           }
@@ -120,7 +132,6 @@
         }
 
         addAppDragEvents( element );
-
       }
 
       $(this).removeClass( dragClasses.enter );
