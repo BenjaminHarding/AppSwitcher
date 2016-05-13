@@ -1,3 +1,11 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
 // App Switcher Sass
 
 @import '_reset';
@@ -13,17 +21,23 @@
 @import 'shared/_useful';
 
 // buttons
-@import 'buttons/_button';
 @import 'buttons/_button-palette-new';
+
+// icons
+@import 'icons/_icon';
+@import 'icons/_icon-stroke';
+
 
 // chrome
 @import 'chrome/_layout';
-@import 'chrome/_layout-header';
-@import 'chrome/_layout-footer';
-@import 'chrome/_layout-sidebar';
-@import 'chrome/_sidebar-list';
 
 
 
 // new
 @import 'chrome/_app-switcher--new';
+
+// application switcher
+@import 'switcher/_switcher';
+@import 'switcher/_switcher-header';
+@import 'switcher/_switcher-body';
+@import 'switcher/_switcher-footer';

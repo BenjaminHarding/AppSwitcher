@@ -1,52 +1,61 @@
 // Raygun Layouts
 
 // Layout Variables
-$header-height: 48px;
-$footer-height: 48px;
-$sidebar-width: 240px;
-
 
 html {
   height: 100%;
   min-width: 320px;
   overflow-y: scroll;
   overflow-x: hidden;
-  background: $background-color;
+  background: #eee;
 }
 
-// on body
-body.layout {
+
+.layout {
   position: relative;
   min-height: 100%;
-  padding-top: $header-height;
-  padding-bottom: $footer-height;
   @include screen-min {
     padding-bottom: 0;
   }
 }
 
-// Layout classes (applied to body)
-body.layout--sidebar {
-  padding-left: $sidebar-width;
-  @include screen-min {
-    padding-left: 0;
-  }
+.layout__switcher {
+  position: fixed;
+  z-index: 15;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 40px 12px;
+  background: rgba($color-stealth,0.6);
 }
 
-// Layout fullscreen
-body.layout--fullscreen {
-  padding: 0;
-  overflow: hidden;
-  .layout__footer,
-  .layout__sidebar,
-  .layout__header {
-    display: none;
-  }
-  .layout__content {
-    height: 100%;
-  }
+.layout__header {
+  display: block;
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  height: 48px;
+  width: 100%;
+  background: $color-byzantine;
+}
+.layout__sidebar {
+  position: fixed;
+  z-index: 4;
+  width: 220px;
+  height: 100%;
+  background: $color-stealth;
 }
 
-// layout content
 .layout__content {}
 
+.layout__footer {
+  position: absolute;
+  z-index: 3;
+  bottom: 0;
+  left: 0;
+  height: 48px;
+  width: 100%;
+  background: $color-grey;
+}

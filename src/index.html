@@ -5,15 +5,10 @@
     <script type="text/javascript" src="scripts/vendor/jquery-1.9.1.js"></script>
     <!-- <script type="text/javascript" src="scripts/vendor/modernizr-custom.js"></script> -->
   </head>
-  <body class="layout layout--sidebar">
-
-    <!-- Layout -->
-    <div class="layout__header layout__header--purple">
-
-    </div>
+  <body class="layout">
 
     <!-- layout applications -->
-    <div class="layout__applications layout__header--purple">
+    <div class="layout__switcher">
       <div class="app-switcher app-switcher--visible">
 
         <div class="app-switcher__header">
@@ -40,11 +35,71 @@
       </div>
     </div>
 
-    <!-- layout sidebar -->
+
+
+    <div class="layout__switcher">
+      <div class="switcher">
+
+        <!-- header -->
+        <div class="switcher__header">
+          <div class="switcher-header">
+            <div class="switcher-header__search">
+              <div class="switcher-search">
+                <div class="switcher-search__icon">
+                  <span class="flat-icon icon-16 icon--search"></span>
+                </div>
+                <input class="switcher-search__input" type="text" placeholder="Search applications...">
+              </div>
+            </div>
+            <div class="switcher-header__sort">
+
+              <div class="switcher-sort">
+                <div class="switcher-sort__item">
+                  <div class="sort-item">
+                    <div class="sort-item__button">
+                      <div class="sort-button">
+                        <div class="flat-icon icon-16 cross-icon"></div>
+                      </div>
+                    </div>
+                    <div class="sort-item__tooltip">
+                      <div class="sort-tooltip">
+                        Tooltip
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- content -->
+        <div class="switcher__body">
+          <div class="switcher-custom">
+            <div class="switcher-custom__header"></div>
+            <div class="switcher-custom__content"></div>
+          </div>
+        </div>
+
+        <!-- footer -->
+        <div class="switcher__footer">
+          <div class="switcher-footer">
+            <div class="switcher-footer__create-new">
+              <a class="button button--green button--36">Create new application</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- Layout -->
+    <div class="layout__header"></div>
     <div class="layout__sidebar"></div>
-
     <div class="layout__content"></div>
-
+    <div class="layout__footer"></div>
 
 
   </body>
