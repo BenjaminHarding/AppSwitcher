@@ -44,7 +44,7 @@
 
 // mixins
 @mixin button-color ($standard,$light,$dark) {
-  color: $text-white;
+  color: $text-white!important;
   background: $standard;
   border-color: $standard;
   &:hover {
