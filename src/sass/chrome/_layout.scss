@@ -59,3 +59,42 @@ html {
   width: 100%;
   background: $color-grey;
 }
+
+.header-button {
+  width: 220px;
+  height: 48px;
+  position: relative;
+  color: rgba(white,0.8);
+  padding: 0 56px;
+  background: rgba(black,0.3);
+  &:hover {
+    color: white;
+    background: rgba(black,0.2);
+  }
+  &:active {
+    color: white;
+    background: rgba(black,0.4);
+  }
+}
+.header-button__avatar {
+  cursor: pointer;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 24px;
+  height: 24px;
+  background: white;
+  border-radius: 4px;
+}
+.header-button__name {
+  line-height: 48px;
+  font-size: 16px;
+  font-weight: bold;
+  font-size: 14px;
+}
+.header-button__icon {
+  padding: 16px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
