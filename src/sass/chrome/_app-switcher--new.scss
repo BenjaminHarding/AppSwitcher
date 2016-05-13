@@ -26,7 +26,17 @@
 
 .app-switcher__content {}
 
-// App
+// App Groups
+.app-group {}
+
+.app-group__heading {}
+
+.app-group__content {
+  min-height: 100px;
+  background-color: grey;
+}
+
+// App Draggable elements
 .app-switcher-app {
   display: block;
   width: 50px;
