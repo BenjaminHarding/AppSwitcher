@@ -1,13 +1,11 @@
 
 //App switcher main
 .app-switcher {
+  display: none!important;
   position: absolute;
   top: 40px;
   left: 40px;
-
   z-index: 100;
-
-  display: none;
   width: 100%;
   max-width: 800px;
 

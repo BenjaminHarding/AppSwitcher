@@ -20,21 +20,18 @@
 
 // sizes
 //--36
-.button-36,
 .button--36 {
   height: 36px;
   line-height: 24px;
   padding: 4px 12px;
 }
 //--40
-.button-40,
 .button--40 {
   height: 40px;
   line-height: 24px;
   padding: 6px 16px;
 }
 //--48
-.button-48,
 .button--48 {
   height: 48px;
   line-height: 24px;
@@ -146,13 +143,13 @@
 }
 
 //--grey
-.button-grey,
 .button--grey {
   @include button-color(
-      $color-grey-dark,
-      $color-grey-dark,
+      $color-grey,
+      $color-grey-light,
       $color-grey-dark
   );
+  color: #555!important;
 }
 .button--grey-stroke {
   @include button-color-stroke (

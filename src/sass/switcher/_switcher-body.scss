@@ -1,1 +1,85 @@
-// switcher__content
+// switcher__body
+
+.switcher-body {
+  padding: 0 24px;
+}
+.switcher-body__create {
+  padding: 12px 0;
+  border-bottom: 1px solid $color-border;
+}
+.switcher-body__groups {
+  padding: 24px 0;
+}
+
+
+// application-group
+.application-group {}
+.application-group--margin {
+  margin: 0 0 24px;
+}
+.application-group__header {}
+.application-group__applications {
+  background: $color-grey-light;
+}
+
+
+// application header
+.application-header {
+  background: white;
+  position: relative;
+  padding: 0 48px;
+}
+.application-header__name {
+  line-height: 40px;
+  font-weight: bold;
+  font-size: 16px;
+}
+.application-header__delete {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px;
+}
+.application-header__move {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 12px;
+}
+
+// application-grid
+.application-grid {
+  padding: 20px;
+}
+.application-grid__item {
+  float: left;
+  width: 25%;
+  padding: 4px;
+}
+.application-grid__empty {
+  padding: 40px;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+
+// application item
+.application-item {
+  position: relative;
+  background: white;
+  padding: 16px 24px 16px 72px;
+}
+.application-item__name {
+  line-height: 24px;
+  font-weight: bold;
+}
+.application-item__icon {
+  position: absolute;
+  top: 16px;
+  left: 24px;
+  width: 24px;
+  height: 24px;
+  border-radius: 3px;
+  background: $color-azure;
+}
