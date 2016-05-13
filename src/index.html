@@ -17,9 +17,10 @@
 
         <div class="app-switcher__header">
           <h1>App Switcher</h1>
+          <button class="js-create-group">Create group</button>
         </div>
 
-        <div class="app-switcher__content">
+        <div class="app-switcher__content js-app-container">
 
           <div class="app-group">
             <div class="app-group__heading">
@@ -32,7 +33,7 @@
           </div>
 
           <div class="app-group">
-            <div class="app-group__heading">
+            <div class="app-group__heading js-app-ungrouped">
               <h2 class="js-group-title">Uncategorized</h2>
             </div>
 
@@ -200,5 +201,6 @@
 
   <script type="text/javascript" src="scripts/app-switcher-dnd.js"></script>
   <script type="text/javascript" src="scripts/app-switcher-rename.js"></script>
+  <script type="text/javascript" src="scripts/app-switcher-create.js"></script>
 
 </html>

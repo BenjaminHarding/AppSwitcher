@@ -1,15 +1,22 @@
 (function($, window) {
 
+  window.AppSwitcher = window.AppSwitcher || {};
+
   var dragElements = ['js-drag-app-group', 'js-drag-app'];
 
-  var addGroupDragEvents = function( element ) {
+  window.AppSwitcher.addGroupDragEvents = function( element, findInside ) {
+
+    if( findInside ) {
+      element = $(element).find('.' + dragElements[0])[0];
+    }
+
     element.addEventListener('dragenter', dragEvents.enter, false);
     element.addEventListener('dragleave', dragEvents.leave, false);
     element.addEventListener('dragover', dragEvents.over, false);
     element.addEventListener('drop', dragEvents.drop, false);
   };
 
-  var addAppDragEvents = function( element ) {
+  window.AppSwitcher.addAppDragEvents = function( element ) {
 
     element.addEventListener('dragstart', dragEvents.started, false);
     element.addEventListener('dragover', dragEvents.over, false);
@@ -35,14 +42,14 @@
 
       element.style.backgroundColor = `rgb( ${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)} )`;
 
-      addAppDragEvents( element );
+      window.AppSwitcher.addAppDragEvents( element );
 
     });
 
     // Groups
     $( '.' + dragElements[0] ).each(function(index,element) {
 
-      addGroupDragEvents( element );
+      window.AppSwitcher.addGroupDragEvents( element );
 
     });
 
@@ -144,7 +151,7 @@
           $( element ).appendTo( $(this) );
         }
 
-        addAppDragEvents( element );
+        window.AppSwitcher.addAppDragEvents( element );
       }
 
       $(this).removeClass( dragClasses.enter );
