@@ -19,6 +19,9 @@ html {
   }
 }
 
+$transition-time: 200ms;
+$transition-easing: cubic-bezier(0.215, 0.61, 0.355, 1);
+
 .layout__switcher {
   position: fixed;
   z-index: 15;
@@ -28,6 +31,19 @@ html {
   height: 100%;
   padding: 56px 12px;
   background: rgba($color-stealth,0.6);
+
+  opacity: 0;
+  transition: opacity $transition-time $transition-easing;
+}
+
+.layout__switcher--hidden {
+  visibility: hidden;
+}
+
+.layout__switcher--visible {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(0, 0);
 }
 
 .layout__header {
@@ -58,4 +74,13 @@ html {
   height: 48px;
   width: 100%;
   background: $color-grey;
+}
+
+// Switcher
+.switcher {
+  transform: translate(0, 10px);
+  transition: transform $transition-time $transition-easing;
+}
+.switcher--visible {
+  transform: translate(0, 0);
 }

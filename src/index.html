@@ -8,11 +8,7 @@
   <body class="layout">
 
     <!-- layout applications -->
-
-    <div class="layout__switcher">
-      <div class="app-switcher app-switcher--visible">
-
-    <div class="layout__applications layout__header--purple">
+    <div class="layout__applications layout__header--purple" style="display:none">
       <div class="app-switcher app-switcher--visible js-app-switcher">
 
         <div class="app-switcher__header">
@@ -71,10 +67,9 @@
 
         </div>
 
-        <div class="app-switcher__footer">
+        <div class="app-switcher__footer"></div>
 
-        </div>
-</div>
+      </div>
 </div>
       </div>
     </div>
@@ -82,13 +77,11 @@
 
 
 
-
-
+    <div class="layout__switcher layout__switcher--hidden js-switcher-target ">
+      <div class="switcher js-switcher-content">
     <!-- new markup -->
 
 
-    <div class="layout__switcher">
-      <div class="switcher">
 
         <!-- header -->
         <div class="switcher__header">
@@ -302,7 +295,9 @@
 
 
     <!-- Layout -->
-    <div class="layout__header"></div>
+    <div class="layout__header">
+      <button class="js-switcher-toggle">Applications</button>
+    </div>
     <div class="layout__sidebar"></div>
     <div class="layout__content"></div>
     <div class="layout__footer"></div>
@@ -310,6 +305,7 @@
 
   </body>
 
+  <script type="text/javascript" src="scripts/app-switcher-button.js"></script>
   <script type="text/javascript" src="scripts/app-switcher-dnd.js"></script>
   <script type="text/javascript" src="scripts/app-switcher-rename.js"></script>
   <script type="text/javascript" src="scripts/app-switcher-create.js"></script>
