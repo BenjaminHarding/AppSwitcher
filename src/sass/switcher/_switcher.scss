@@ -7,6 +7,7 @@
     background: white;
     border-radius: 4px;
     max-width: 960px;
+    height: 100%;
     box-shadow: 0 8px 32px rgba($color-stealth,0.4),0 4px 12px rgba($color-stealth,0.4);
 }
 // switcher arrow
@@ -42,4 +43,6 @@
 .switcher__body {
   background: $color-grey-lighter;
   min-height: 400px;
+  height: 100%;
+  overflow-y: scroll;
 }

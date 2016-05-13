@@ -1,5 +1,4 @@
 // switcher__body
-
 .switcher-body {
   padding: 0 24px;
 }
@@ -47,6 +46,7 @@
   padding: 12px;
 }
 
+
 // application-grid
 .application-grid {
   padding: 20px;
@@ -68,7 +68,7 @@
 .application-item {
   position: relative;
   background: white;
-  padding: 16px 24px 16px 72px;
+  padding: 16px 16px 16px 56px;
 }
 .application-item__name {
   line-height: 24px;
@@ -77,7 +77,7 @@
 .application-item__icon {
   position: absolute;
   top: 16px;
-  left: 24px;
+  left: 16px;
   width: 24px;
   height: 24px;
   border-radius: 3px;
